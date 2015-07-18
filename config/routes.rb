@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   get 'error/error404'
 
+  resources :memberships
+
+  resources :groups
+
   devise_for :users
+  
   resources :users
 
   # Errors
