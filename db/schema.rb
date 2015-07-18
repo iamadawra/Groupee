@@ -11,16 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150718084642) do
+ActiveRecord::Schema.define(version: 20150718110522) do
 
-  create_table "groups", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "group_memberships", force: :cascade do |t|
+    t.string  "member_type"
+    t.integer "member_id"
+    t.integer "group_id"
+    t.string  "group_name"
+    t.string  "membership_type"
   end
 
-  create_table "memberships", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  add_index "group_memberships", ["group_id"], name: "index_group_memberships_on_group_id"
+  add_index "group_memberships", ["group_name"], name: "index_group_memberships_on_group_name"
+  add_index "group_memberships", ["member_id", "member_type"], name: "index_group_memberships_on_member_id_and_member_type"
+
+  create_table "groups", force: :cascade do |t|
+    t.string "type"
   end
 
   create_table "users", force: :cascade do |t|
@@ -37,6 +43,8 @@ ActiveRecord::Schema.define(version: 20150718084642) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
+    t.integer  "member_id"
+    t.string   "member_type"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

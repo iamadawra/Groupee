@@ -16,6 +16,8 @@
 #  created_at             :datetime
 #  updated_at             :datetime
 #  name                   :string
+#  member_id              :integer
+#  member_type            :string
 #
 
 describe User do

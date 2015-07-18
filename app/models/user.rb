@@ -16,6 +16,8 @@
 #  created_at             :datetime
 #  updated_at             :datetime
 #  name                   :string
+#  member_id              :integer
+#  member_type            :string
 #
 
 class User < ActiveRecord::Base
@@ -24,7 +26,10 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_and_belongs_to_many :groups
-  has_many :group_ownerships
-  has_many :owned_groups, through: :group_owernships, class_name: "Group"
+  groupify :group_member
+  groupify :named_group_member
+end
+
+class Assignment < ActiveRecord::Base
+  groupify :group_member
 end
