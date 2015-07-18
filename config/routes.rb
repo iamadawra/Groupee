@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'wireframe/index'
+
   get 'error/error404'
 
   resources :memberships
