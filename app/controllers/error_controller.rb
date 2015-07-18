@@ -1,4 +1,5 @@
 class ErrorController < ApplicationController
-  def 404
+  def error404
+  	render status: :not_found
   end
 end

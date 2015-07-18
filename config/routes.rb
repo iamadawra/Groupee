@@ -2,7 +2,7 @@ Groupee::Application.routes.draw do
   get "error/404"
   resources :users
 
-  match "/404" => "errors#error404", via: [ :get, :post, :patch, :delete ]
+  match "/404" => "error#error404", via: [ :get, :post, :patch, :delete ]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
