@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@import url(http://fonts.googleapis.com/css?family=Lato:700,900);
+@import url(http://fonts.googleapis.com/css?family=Lato:300,700,900);
 
 .cover{
 	position: absolute; 
@@ -25,7 +25,16 @@
 	font-family: 'Lato', sans-serif;
   	font-weight: 900;
   	font-size: 75px;
-  	color:#ecf0f1;
+  	color:white;
+}
+
+.cover p{
+	color:#ecf0f1;
+	margin-top: 50px;
+	font-family: 'Lato', sans-serif;
+	font-style: italic;
+  	font-weight: 300;
+  	font-size: 35px;
 }
 
 .fbook_login_button a:link{

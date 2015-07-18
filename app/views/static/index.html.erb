@@ -8,21 +8,23 @@
 <script type="text/javascript">
 	window.onload = function(){
 		$( ".cover h1" ).hide().fadeIn(600, function() {
-
 		});
 	};
 </script>
 
 	<div class="cover">
 		<h1>Groupee</h1>
+		<p>Organizing your groups</p>
+		<!--
 		<div class="fbook_login_button">
-		<% if current_user %>
-			 Welcome <%= current_user.name %>!
-			<%= link_to "Sing out", signout_path %>
-		<% else %>
-			<%= link_to "Sign in", "/auth/facebook" %>
-		<% end %>
-	</div>
+			<% if current_user %>
+				 Welcome <%= current_user.name %>!
+				<%= link_to "Sing out", signout_path %>
+			<% else %>
+				<%= link_to "Sign in", "/auth/facebook" %>
+			<% end %>
+		</div>
+		-->
 	</div>
 
 
